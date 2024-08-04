@@ -13,6 +13,9 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      wordBreak: {
+        'keep-all': 'keep-all',
+      },
     },
     colors: {
       ...colors,
@@ -20,5 +23,13 @@ module.exports = {
       secondary: colors.pink,
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.word-break-keep-all': {
+          'word-break': 'keep-all',
+        },
+      })
+    }
+  ],
 };
